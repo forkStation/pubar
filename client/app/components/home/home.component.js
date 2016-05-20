@@ -1,11 +1,11 @@
 import template from './home.jade';
 import controller from './home.controller';
-// import './home.styl';
+ import './home.less';
 
 let homeComponent = {
   restrict: 'E',
   bindings: {},
-  template,
+  template:template(),
   controller,
   controllerAs: 'vm'
 };
