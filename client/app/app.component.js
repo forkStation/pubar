@@ -8,11 +8,7 @@ let appComponent = {
         "ngInject";
 
         this.name = 'wj';
-
-        $ionicPopup.show({
-            template: 'aaa',
-            title: 'wj'
-        })
+        
 
     },
     controllerAs: 'vm'
