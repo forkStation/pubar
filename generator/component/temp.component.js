@@ -1,6 +1,6 @@
 import template from './<%= name %>.jade';
 import controller from './<%= name %>.controller';
-import './<%= name %>.less';
+import './<%= name %>.scss';
 
 let <%= name %>Component = {
   restrict: 'E',
