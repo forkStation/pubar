@@ -1,3 +1,7 @@
 div
-  h1  {{vm.name}} create by {{vm.create}}
-  h2  {{vm.create2}}
+    h1  {{vm.name}} create by {{vm.create}}
+    h2  {{vm.num}}
+    section(ng-include src="'/a.html'")
+
+script(type="text/ng-template" id='/a.html')
+    input(ng-model="vm.num" type="text")

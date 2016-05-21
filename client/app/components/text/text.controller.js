@@ -4,6 +4,7 @@ class TextController {
         console.log(this);
 
         this.$onInit=function () {
+            $scope.num=1;
             this.name = 'text';
         };
         this.$onChanges=function (obj) {

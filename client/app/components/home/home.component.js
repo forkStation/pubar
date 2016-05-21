@@ -1,6 +1,6 @@
 import template from './home.jade';
 import controller from './home.controller';
- import './home.less';
+ import './home.scss';
 
 let homeComponent = {
   restrict: 'E',

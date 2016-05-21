@@ -5,5 +5,6 @@ main
     div
         h1 Found in {{vm.name}}.html
         h2 父级： {{vm.create}}
+            a(ui-sref="about") about
 
         text(create="vm.create" create2="vm.create" on-delete="vm.alertSome('wangjue')")

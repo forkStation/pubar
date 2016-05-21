@@ -1,5 +1,5 @@
 import template from './app.jade';
-import './app.less';
+import './app.scss';
 
 let appComponent = {
   template:template(),

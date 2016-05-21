@@ -5,7 +5,7 @@ import controller from './about.controller';
 let aboutComponent = {
   restrict: 'E',
   bindings: {},
-  template,
+  template:template(),
   controller,
   controllerAs: 'vm'
 };

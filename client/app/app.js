@@ -1,12 +1,18 @@
 import angular from 'angular';
+import  'vendor/ionic.min';
+import  'vendor/ionic-angular.min';
+import 'ngAnimate';
+import 'ngSanitize';
+
 import uiRouter from 'angular-ui-router';
-import Common from './common/common';
 import Components from './components/components';
 import AppComponent from './app.component';
 import 'normalize.css';
+import '../../bower_components/ionic/scss/ionic.scss';
 
 angular.module('app', [
     uiRouter,
+    'ionic',
    // Common.name,
    Components.name
   ])

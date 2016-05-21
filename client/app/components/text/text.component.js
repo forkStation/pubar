@@ -1,6 +1,6 @@
 import template from './text.jade';
 import controller from './text.controller';
-import './text.less';
+import './text.scss';
 
 let textComponent = {
   restrict: 'E',
