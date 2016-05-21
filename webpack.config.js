@@ -10,7 +10,7 @@ module.exports = {
             {test: /\.js$/, exclude: [/app\/lib/, /node_modules/,/bower_components/], loader: 'ng-annotate!babel'},
             {test: /\.html/, loader: 'raw'},
             {test: /\.jade$/, loader: 'jade'},
-            {test: /\.scss/, loader: 'style!css!sass'},
+            {test: /\.scss$/, loader: 'style!css!sass'},
             {test: /\.css$/, loader: 'style!css'},
             {test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=10000&name=[path][name].[ext]'}
         ]

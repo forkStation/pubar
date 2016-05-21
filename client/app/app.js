@@ -8,7 +8,7 @@ import uiRouter from 'angular-ui-router';
 import Components from './components/components';
 import AppComponent from './app.component';
 import 'normalize.css';
-import '../../bower_components/ionic/scss/ionic.scss';
+import './lib/scss/ionic.scss';
 
 angular.module('app', [
     uiRouter,
