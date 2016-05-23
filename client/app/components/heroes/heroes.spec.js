@@ -1,16 +1,16 @@
-import HomeModule from './home'
-import HomeController from './home.controller';
-import HomeComponent from './home.component';
-import HomeTemplate from './home.html';
+import HeroesModule from './heroes'
+import HeroesController from './heroes.controller';
+import HeroesComponent from './heroes.component';
+import HeroesTemplate from './heroes.html';
 
-describe('Home', () => {
+describe('Heroes', () => {
   let $rootScope, makeController;
 
-  beforeEach(window.module(HomeModule.name));
+  beforeEach(window.module(HeroesModule.name));
   beforeEach(inject((_$rootScope_) => {
     $rootScope = _$rootScope_;
     makeController = () => {
-      return new HomeController();
+      return new HeroesController();
     };
   }));
 
@@ -30,16 +30,16 @@ describe('Home', () => {
     // template specs
     // tip: use regex to ensure correct bindings are used e.g., {{  }}
     it('has name in template [REMOVE]', () => {
-      expect(HomeTemplate).to.match(/{{\s?vm\.name\s?}}/g);
+      expect(HeroesTemplate).to.match(/{{\s?vm\.name\s?}}/g);
     });
   });
 
   describe('Component', () => {
       // component/directive specs
-      let component = HomeComponent;
+      let component = HeroesComponent;
 
       it('includes the intended template',() => {
-        expect(component.template).to.equal(HomeTemplate);
+        expect(component.template).to.equal(HeroesTemplate);
       });
 
       it('uses `controllerAs` syntax', () => {
@@ -47,7 +47,7 @@ describe('Home', () => {
       });
 
       it('invokes the right controller', () => {
-        expect(component.controller).to.equal(HomeController);
+        expect(component.controller).to.equal(HeroesController);
       });
   });
 });

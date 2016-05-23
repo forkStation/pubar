@@ -1,8 +1,8 @@
-import template from './<%= name %>.jade';
-import controller from './<%= name %>.controller';
-import './<%= name %>.scss';
+import template from './heroesList.jade';
+import controller from './heroesList.controller';
+import './heroesList.scss';
 
-let <%= name % >Component = {
+let heroesListComponent = {
     restrict: 'E',
     bindings: {},
     template: template(),
@@ -14,4 +14,4 @@ let <%= name % >Component = {
     ]*/
 };
 
-export default <%= name % >Component;
+export default heroesListComponent;

@@ -1,0 +1,2 @@
+div(ng-repeat='hero in vm.heroes' ng-class="{ selected: vm.isSelected(hero) }")
+    a(ng-link="['HeroDetail',{id: hero.id}]") {{hero.name}}

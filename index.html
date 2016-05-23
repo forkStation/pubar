@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <base href="/">
+</head>
+<body ng-app="appp">
+<h1 class="title">Component Router</h1>
+<app></app>
+
+
+<script src="./pubar/bower_components/angular/angular.js"></script>
+<script src="./pubar/node_modules/@angular/router/angular1/angular_1_router.js"></script>
+<script>
+    angular.module('appp', ['ngComponentRouter', 'heroes'])
+            .config(function ($locationProvider) {
+                $locationProvider.html5Mode(true);
+            }).value('$routerRootComponent', 'app')
+            .component('app', {
+                template: '<nav>\n' +
+                '  <a>Crisis Center</a>\n' +
+                '  <a ng-link="[\'Heroes\']">Heroes</a>\n' +
+                '</nav>\n' +
+                '<ng-outlet></ng-outlet>\n',
+                $routeConfig: [
+                    {path: '/heroes/...', name: 'Heroes', component: 'heroes'},
+                ]
+            });
+
+
+    angular.module('heroes', [])
+            .component('heroes', {
+                template: '<h2>Heroes</h2><ng-outlet></ng-outlet>',
+                $routeConfig: [
+                    {path: '/', name: 'HeroList', component: 'heroList', useAsDefault: true},
+                    {path: '/:id', name: 'HeroDetail', component: 'heroDetail'}
+                ]
+            })
+            .component('heroList', {
+                template: '<div ng-repeat="hero in $ctrl.heroes">\n' +
+                '<a ng-link="[\'HeroDetail\', {id: hero.id}]">{{hero.name}}</a>\n' +
+                '</div>',
+                controller: HeroListComponent
+            })
+            .component('heroDetail', {
+                template: '<div ng-if="$ctrl.hero">\n' +
+                '  <h3>"{{$ctrl.hero.name}}"</h3>\n' +
+                '  <div>\n' +
+                '    <label>Id: </label>{{$ctrl.hero.id}}</div>\n' +
+                '  <div>\n' +
+                '    <label>Name: </label>\n' +
+                '    <input ng-model="$ctrl.hero.name" placeholder="name"/>\n' +
+                '  </div>\n' +
+                '  <button ng-click="$ctrl.gotoHeroes()">Back</button>\n' +
+                '</div>\n',
+                bindings: {$router: '<'},
+                controller: HeroDetailComponent
+            }).service('heroService', HeroService)
+
+
+    function HeroListComponent(heroService) {
+        var selectedId = null;
+        var $ctrl = this;
+
+//        this.$routerOnActivate = function (next) {
+//            heroService.getHeroes().then(function (heroes) {
+//                $ctrl.heroes = heroes;
+//                selectedId = next.params.id;
+//            });
+//        };
+
+        this.isSelected = function (hero) {
+            return (hero.id == selectedId);
+        };
+    }
+
+
+    function HeroService($q) {
+        var heroesPromise = $q.when([
+            {id: 11, name: 'Mr. Nice'},
+            {id: 11, name: 'Mr. Nice'},
+            {id: 11, name: 'Mr. Nice'},
+            {id: 11, name: 'Mr. Nice'},
+            {id: 11, name: 'Mr. Nice'},
+        ]);
+
+        this.getHeroes = function () {
+            return heroesPromise;
+        };
+
+        this.getHero = function (id) {
+            return heroesPromise.then(function (heroes) {
+                for (var i = 0; i < heroes.length; i++) {
+                    if (heroes[i].id == id) return heroes[i];
+                }
+            });
+        };
+    }
+
+    function HeroDetailComponent(heroService) {
+        var $ctrl = this;
+
+        this.$routerOnActivate = function (next, previous) {
+            // Get the hero identified by the route parameter
+            var id = next.params.id;
+            return heroService.getHero(id).then(function (hero) {
+                $ctrl.hero = hero;
+            });
+        };
+    }
+</script>
+</body>
+</html>

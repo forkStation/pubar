@@ -1,0 +1,9 @@
+div(ng-if="vm.hero")
+  h3  {{vm.hero.name}}
+  div
+    label Id:
+    | {{vm.hero.id}}
+  div
+    label Name:
+    input(ng-model="vm.hero.name" placeholder="name")
+  button(ng-click="vm.gotoHeroes()") Back

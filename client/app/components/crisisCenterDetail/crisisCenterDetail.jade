@@ -1,0 +1,10 @@
+div(ng-if='vm.crisis')
+    h3  {{vm.editName}}
+    div
+        lebel Id:
+        | {{vm.crisis.id}}
+    div
+        label Name:
+        input(ng-model="vm.editName" placeholder="name")
+    button(ng-click="vm.save()") Save
+    button(ng-click="vm.cancel()") Cancel

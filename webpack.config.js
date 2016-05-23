@@ -11,7 +11,7 @@ module.exports = {
             {test: /\.html/, loader: 'raw'},
             {test: /\.jade$/, loader: 'jade'},
             {test: /\.scss$/, loader: 'style!css!sass'},
-            {test: /\.css$/, loader: 'style!css'},
+            // {test: /\.css$/, loader: 'style!css'},
             {test: /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/, loader: 'url-loader?limit=10000&name=[path][name].[ext]'}
         ]
     },

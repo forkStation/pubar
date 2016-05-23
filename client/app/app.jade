@@ -1,6 +1,5 @@
 div.app
-    h1  hello world {{vm.name}}
-    div(ui-view)
-
-ion-header-bar.bar-positive
-    h1.title check
+    h1  Component Router
+    a(ng-link="['CrisisCenter']") CrisisCenter
+    a(ng-link="['Heroes']") Heroes
+    ng-outlet
