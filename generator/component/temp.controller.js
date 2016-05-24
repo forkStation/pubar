@@ -17,7 +17,10 @@ class <%= upCaseName %>Controller {
   $postLink(){
     //非常重要的函数，所有对dom的操作都应该放在这里
   }
-
+  $routerOnActivate(next){
+        // Get the crisis identified by the route parameter
+        //获取路由参数。承担resolve的作用
+  }
 
 }
 
