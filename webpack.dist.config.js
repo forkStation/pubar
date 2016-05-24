@@ -14,6 +14,7 @@ config.plugins = config.plugins.concat([
 
   // Reduces bundles total size
   new webpack.optimize.UglifyJsPlugin({
+    sourceMap: false,
     mangle: {
 
       // You can specify all variables that should not be mangled.

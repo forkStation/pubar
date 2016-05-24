@@ -4,9 +4,16 @@ import './app.scss';
 let appComponent = {
     template: template(),
     restrict: 'E',
-    controller: function () {
+    controller: function ($http) {
         "ngInject";
         this.name = 'wj';
+        $http({
+            method: 'GET',
+            url: '/api/login'
+        }).then(function (res) {
+            console.log(res,'das');
+        })
+
     },
     controllerAs: 'vm',
     $routeConfig: [
