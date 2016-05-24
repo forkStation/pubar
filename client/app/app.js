@@ -1,6 +1,6 @@
 import angular from 'angular';
 import  'vendor/ionic.min';
-import  'vendor/ionic-angular.min';
+import  './lib/ionic-angular';
 import 'ngAnimate';
 import 'ngSanitize';
 import '../../node_modules/@angular/router/angular1/angular_1_router'
