@@ -7,6 +7,8 @@ config.output = {
   publicPath: '',
   path: path.resolve(__dirname, 'dist')
 };
+//生产环境代码去除alert和console
+config.module.loaders[0]= {test: /\.js$/, exclude: [/app\/lib/,/library/, /node_modules/,/bower_components/], loader: 'strip-debug!ng-annotate!babel'};
 
 config.plugins = config.plugins.concat([
 
