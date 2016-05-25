@@ -14,6 +14,7 @@ let appComponent = {
             console.log(res,'das');
         })
 
+
     },
     controllerAs: 'vm',
     $routeConfig: [

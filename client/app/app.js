@@ -5,6 +5,7 @@ import 'ngSanitize';
 import  'vendor/ionic.min';
 import '../../node_modules/@angular/router/angular1/angular_1_router'
 import uiRouter from 'angular-ui-router';
+import "lodash";
 
 
 import  '../../library/ionic-angular';
