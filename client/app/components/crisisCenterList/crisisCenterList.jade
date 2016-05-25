@@ -1,4 +1,8 @@
-ui
-  li(ng-repeat="crisis in vm.crises" ng-class="{ selected: vm.isSelected(crisis) }" ng-click="vm.onSelect(crisis)")
-    span.badge  {{crisis.id}}
-    | {{crisis.name}}
+div.crisis-center-list
+  ui
+    li(ng-repeat="crisis in vm.crises" ng-class="{ selected: vm.isSelected(crisis) }" ng-click="vm.onSelect(crisis)")
+      span.badge  {{crisis.id}}
+      | {{crisis.name}}
+
+
+  div.box wode shijie

@@ -10,8 +10,33 @@
     <meta name="description" content="NG6-Starter by @AngularClass">
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <base href="/">
+    <script>
+      (function (win, doc) {
+        win.isMobile = !!/Android|webOS|iPhone|iPod|BlackBerry|IEMobile|Opera Mini|MicroMessenger/i.test(navigator.userAgent);
+        win.isIOS = !!/iPhone|iPad|iPod/i.test(navigator.userAgent);
+        win.isIOS7 = !!/(iPhone|iPad|iPod) OS 7/i.test(navigator.userAgent);
+        win.isAndroid = !!/Android/i.test(navigator.userAgent);
+        win.isWechat = !!/MicroMessenger/i.test(navigator.userAgent);
+        win.isIE = !!/Trident|Edge/i.test(navigator.userAgent);
+
+        var baseWidth = 640;
+        var documentHTML = doc.documentElement;
+
+        function setRootFont() {
+          var docWidth = documentHTML.getBoundingClientRect().width;
+          var scale = docWidth / baseWidth;
+          if (docWidth > 640) {
+            scale = 0.5;
+          }
+          documentHTML.style.fontSize = scale * 100 + 'px';
+        }
+
+        setRootFont();
+        win.addEventListener('resize', setRootFont, false);
+      })(window, document);
+    </script>
   </head>
-  <body ng-app="app"  ng-cloak>
+  <body ng-app="app"  ng-cloak style="font-size: 14px">
 
     <app>
       Loading...
