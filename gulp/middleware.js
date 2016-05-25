@@ -23,6 +23,11 @@ function getApiRoot() {
 }
 
 function mockMiddleware(req, res, next) {
+    var reg = /\.(gif|jpg|png|woff|svg|eot|ttf)\??.*$/;
+    if(reg.test(req.url)){
+        return next()
+    }
+
     console.log('----------------------request from client:' + req.url);
     var apiRoot = getApiRoot();
     return doProxy(apiRoot)(req, res, next);

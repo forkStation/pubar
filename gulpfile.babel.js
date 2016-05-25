@@ -73,7 +73,8 @@ function initBs(bs, isloacl, compiler, config) {
         port: process.env.PORT || 3000,
         open: isloacl ? "local" : "external",
         server: {
-            baseDir: root
+            baseDir: root,
+            directory: true
         },
         middleware: [
             historyApiFallback(),
